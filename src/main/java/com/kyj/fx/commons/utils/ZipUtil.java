@@ -45,6 +45,23 @@ public class ZipUtil {
 	 * @throws Exception
 	 */
 	public static void zip(String sourcePath, String output) throws Exception {
+		zip(sourcePath, output, COMPRESSION_LEVEL);
+	}
+	
+	
+	/**
+	 * 지정된 폴더를 Zip 파일로 압축한다. <br/>
+	 * @작성자 : KYJ (callakrsos@naver.com)
+	 * @작성일 : 2020. 4. 1. 
+	 * @param sourcePath
+	 * 	 		- 압축 대상 디렉토리
+	 * @param output
+	 * 			- 저장 zip 파일 이름
+	 * @param level
+	 * 			- 압축 레벨 1~9, default 8
+	 * @throws Exception
+	 */
+	public static void zip(String sourcePath, String output, int level) throws Exception {
 
 		// 압축 대상(sourcePath)이 디렉토리나 파일이 아니면 리턴한다.
 		File sourceFile = new File(sourcePath);
@@ -65,7 +82,7 @@ public class ZipUtil {
 			fos = new FileOutputStream(output); // FileOutputStream
 			bos = new BufferedOutputStream(fos); // BufferedStream
 			zos = new ZipOutputStream(bos); // ZipOutputStream
-			zos.setLevel(COMPRESSION_LEVEL); // 압축 레벨 - 최대 압축률은 9, 디폴트 8
+			zos.setLevel(level); // 압축 레벨 - 최대 압축률은 9, 디폴트 8
 			zipEntry(sourceFile, sourcePath, zos); // Zip 파일 생성
 			zos.finish(); // ZipOutputStream finish
 		} finally {
