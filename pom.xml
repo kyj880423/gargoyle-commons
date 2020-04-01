@@ -1,0 +1,515 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.kyj.fx</groupId>
+	<artifactId>gargoyle-commons</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+	<name>gargoyle-commons</name>
+	<url>https://github.com/callakrsos/Gargoyle</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Generic properties -->
+		<java.version>1.8</java.version>
+		<!-- Logging -->
+		<logback.version>1.1.2</logback.version>
+		<slf4j.version>1.7.20</slf4j.version>
+		<poi.word.version>3.14</poi.word.version>
+		<!-- Spring -->
+
+		<!-- <spring-framework.version>3.2.3.RELEASE</spring-framework.version> -->
+		<spring-framework.version>4.3.19.RELEASE</spring-framework.version>
+		<!-- JSON -->
+		<jason.version>20141113</jason.version>
+
+		<!-- Jackson -->
+		<jackson.version>[2.10.1,)</jackson.version>
+
+		<!-- HTTP -->
+		<apache-http-client.version>4.3.6</apache-http-client.version>
+
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.kyj.fx</groupId>
+			<artifactId>fxloader</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.word.version}</version>
+		</dependency>
+
+		<!-- ControlsFx i found SpreadSheet bug .. 8.40.10 version -->
+		<dependency>
+			<groupId>org.controlsfx</groupId>
+			<artifactId>controlsfx</artifactId>
+			<version>8.40.14</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.kyj.fx</groupId>
+			<artifactId>gargoyle-nashorn</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>com.kyj.fx</groupId>
+			<artifactId>gargoyle-jython</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>com.kyj.fx</groupId>
+			<artifactId>gargoyle-groovy</artifactId>
+			<version>0.0.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>info.picocli</groupId>
+					<artifactId>picocli</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring-framework.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<!-- JSON -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${jason.version}</version>
+		</dependency>
+
+		<dependency>	
+			<groupId>com.kyj.encryp</groupId>
+			<artifactId>encryp</artifactId>
+			<version>0.0.5</version>
+		</dependency>
+
+		<!-- Tomcat -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+			<version>8.0.9</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.fxmisc.richtext</groupId> -->
+		<!-- <artifactId>richtextfx</artifactId> -->
+		<!-- <version>1.0.0</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${project.basedir}/lib/richtextfx-fat-1.0.0-SNAPSHOT.jar</systemPath> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.fxmisc.richtext</groupId>
+			<artifactId>richtextfx</artifactId>
+			<!-- <version>0.7-M2</version> -->
+			<version>0.9.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.fxmisc.wellbehaved/wellbehavedfx -->
+		<dependency>
+		    <groupId>org.fxmisc.wellbehaved</groupId>
+		    <artifactId>wellbehavedfx</artifactId>
+		    <version>0.3.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.fxmisc.cssfx</groupId>
+			<artifactId>cssfx</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>com.jfoenix</groupId> -->
+<!-- 			<artifactId>jfoenix</artifactId> -->
+<!-- 			<version>1.0.0</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/customjfoenix.jar</systemPath> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/com.jfoenix/jfoenix -->
+		<dependency>
+		    <groupId>com.jfoenix</groupId>
+		    <artifactId>jfoenix</artifactId>
+		    <version>9.0.9</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>kyj.pmd</groupId> -->
+<!-- 			<artifactId>pmd.core</artifactId> -->
+<!-- 			<version>0.0.1-SNAPSHOT</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/pmd.core-0.0.1-SNAPSHOT.jar</systemPath> -->
+<!-- 		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>pmd-core</groupId> -->
+		<!-- <artifactId>pmd.core</artifactId> -->
+		<!-- <version>5.5.1</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${project.basedir}/../pmd.core/lib/pmd-core-5.5.1.jar</systemPath> -->
+		<!-- </dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>net.sourceforge.pmd</groupId> -->
+<!-- 			<artifactId>pmd-core</artifactId> -->
+<!-- 			<version>5.5.1</version> -->
+<!-- 		</dependency> -->
+
+		<!-- <dependency> -->
+		<!-- <groupId>pmd-core</groupId> -->
+		<!-- <artifactId>jcommander</artifactId> -->
+		<!-- <version>1.48</version> -->
+		<!-- <scope>system</scope> -->
+		<!-- <systemPath>${project.basedir}/../pmd.core/lib/jcommander-1.48.jar</systemPath> -->
+		<!-- </dependency> -->
+
+
+
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.javaparser</groupId>
+			<artifactId>javaparser-core</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+
+		<!-- mail lib -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- Apache Mime4j -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>apache-mime4j</groupId> -->
+<!-- 			<artifactId>apache-mime4j-benchmark</artifactId> -->
+<!-- 			<version>0.7.2</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/mime4j/apache-mime4j-benchmark-0.7.2.jar</systemPath> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-benchmark -->
+		<dependency>
+		    <groupId>org.apache.james</groupId>
+		    <artifactId>apache-mime4j-benchmark</artifactId>
+		    <version>0.8.3</version>
+		</dependency>
+		
+<!-- 		<dependency> -->
+<!-- 			<groupId>apache-mime4j</groupId> -->
+<!-- 			<artifactId>apache-mime4j-core</artifactId> -->
+<!-- 			<version>0.7.2</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/mime4j/apache-mime4j-core-0.7.2.jar</systemPath> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-core -->
+		<dependency>
+		    <groupId>org.apache.james</groupId>
+		    <artifactId>apache-mime4j-core</artifactId>
+		    <version>0.8.3</version>
+		</dependency>
+
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>apache-mime4j</groupId> -->
+<!-- 			<artifactId>apache-mime4j-dom</artifactId> -->
+<!-- 			<version>0.7.2</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/mime4j/apache-mime4j-dom-0.7.2.jar</systemPath> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-dom -->
+		<dependency>
+		    <groupId>org.apache.james</groupId>
+		    <artifactId>apache-mime4j-dom</artifactId>
+		    <version>0.8.3</version>
+		</dependency>
+
+<!-- 		<dependency> -->
+<!-- 			<groupId>apache-mime4j</groupId> -->
+<!-- 			<artifactId>apache-mime4j-storage</artifactId> -->
+<!-- 			<version>0.7.2</version> -->
+<!-- 			<scope>system</scope> -->
+<!-- 			<systemPath>${project.basedir}/lib/mime4j/apache-mime4j-storage-0.7.2.jar</systemPath> -->
+<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.james/apache-mime4j-storage -->
+		<dependency>
+		    <groupId>org.apache.james</groupId>
+		    <artifactId>apache-mime4j-storage</artifactId>
+		    <version>0.8.3</version>
+		</dependency>
+
+		<dependency>
+			<!-- jsoup HTML parser library @ http://jsoup.org/ -->
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.10.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-scratchpad</artifactId>
+			<version>${poi.word.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-codec</artifactId>
+					<groupId>commons-codec</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.word.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>${poi.word.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>ooxml-schemas</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+
+		<!-- Http -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>${apache-http-client.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>commons-codec</artifactId>
+					<groupId>commons-codec</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>${apache-http-client.version}</version>
+		</dependency>
+
+		<!-- [start] org Reflections project :: http://github.com/ronmamo/reflections -->
+		<dependency>
+			<groupId>org.reflections</groupId>
+			<artifactId>reflections</artifactId>
+			<version>0.9.9-RC1</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>kyj.Fx.dao.wizard</groupId>
+			<artifactId>kyj.Fx.dao.wizard</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.kyj.fx</groupId>
+			<artifactId>FxVoEditor</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- PostgreSQL -->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>9.1-901-1.jdbc4</version>
+		</dependency>
+
+		<!-- sqlite -->
+		<!-- 17.7.19 kyj 3.19.3 버젼으로 교체함. (재귀호출 쿼리 지원) , pk문제도 발생하지않는것으로 보임. -->
+		<!-- 버젼을 하향함. 3.8.11.2 최신버젼에서 getPrimaryKey() 함수에 버그가 존재함. 해당버그는 pk리스팅을 
+			잘못가져옴. 사람들이 가장 많이 쓰는 버젼으로 교체. -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<!-- <version>3.7.2</version> -->
+			<version>3.19.3</version>
+		</dependency>
+
+		<!-- 2018.07.30 -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>2.2.5</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.12</version>
+		</dependency>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.fxmisc.cssfx</groupId> -->
+		<!-- <artifactId>cssfx</artifactId> -->
+		<!-- <version>1.0.0</version> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>org.jfxtras</groupId>
+			<artifactId>jmetro</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>My-Project</id>
+			<name>My-Project Custom Jars</name>
+			<url>file://${project.basedir}/lib/</url>
+		</repository>
+
+		<repository>
+			<id>Maven Central</id>
+			<name>Maven Central</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</repository>
+
+		<repository>
+			<id>Spring Central</id>
+			<name>Spring Central</name>
+			<url>http://repo.spring.io/libs-milestone/</url>
+		</repository>
+
+
+	</repositories>
+	<description>gargoyle commons library. for javafx</description>
+	<scm>
+		<url>https://github.com/callakrsos/Gargoyle</url>
+		<developerConnection>callakrsos</developerConnection>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/callakrsos/Gargoyle/issues</url>
+	</issueManagement>
+</project>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<fx:root prefHeight="936.0" prefWidth="917.0" type="BorderPane" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+	<top>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" maxWidth="120.0" minWidth="10.0" prefWidth="120.0" />
+				<ColumnConstraints hgrow="NEVER" maxWidth="196.0" minWidth="10.0" prefWidth="186.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="134.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="66.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="75.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="125.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+				<RowConstraints maxHeight="174.0" minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+				<RowConstraints maxHeight="283.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label text="ContentType" />
+				<HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="9">
+					<children>
+						<ChoiceBox fx:id="choContentType" prefHeight="23.0" prefWidth="120.0" />
+						<CheckBox disable="true" mnemonicParsing="false" text="Urgent" />
+						<Label text="Atach File" />
+						<Label fx:id="lblAttachmentCount" text="0" />
+                  <Label text="Unit(s)" />
+					</children>
+				</HBox>
+				<Label text="Subject" GridPane.rowIndex="1" />
+				<Label text="Recipient list" GridPane.rowIndex="2" />
+				<TextField fx:id="txtSubject" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="1">
+					<GridPane.margin>
+						<Insets />
+					</GridPane.margin>
+				</TextField>
+				<HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="209.0" spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
+					<GridPane.margin>
+						<Insets />
+					</GridPane.margin>
+					<children>
+      				<TextField fx:id="txtRecipient" maxWidth="1.7976931348623157E308" onKeyPressed="#txtRecipientOnKeyPress" prefHeight="23.0" prefWidth="470.0" HBox.hgrow="ALWAYS" />
+						<Button fx:id="btnAddRecipient" minWidth="80.0" mnemonicParsing="false" onAction="#btnAddRecipientOnAction" prefWidth="80.0" text="Add" HBox.hgrow="ALWAYS" />
+						<Button disable="true" mnemonicParsing="false" text="User Search" HBox.hgrow="ALWAYS" />
+					</children>
+				</HBox>
+				<VBox alignment="TOP_CENTER" spacing="1.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4">
+					<children>
+						<Button fx:id="btnRemoveRecipient" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnRemoveRecipientOnAction" text="Delete" VBox.vgrow="ALWAYS" />
+						<Button fx:id="btnUpRecipient" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnUpRecipientOnAction" text="Up" VBox.vgrow="ALWAYS" />
+						<Button fx:id="RecipientDownRecipient" alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#RecipientDownRecipientOnAction" text="Down" VBox.vgrow="ALWAYS" />
+					</children>
+               <padding>
+                  <Insets left="2.0" right="2.0" />
+               </padding>
+				</VBox>
+				<BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="4">
+					<center>
+						<TableView fx:id="tbReceiver" BorderPane.alignment="CENTER">
+							<columns>
+								<TableColumn fx:id="tcNo" prefWidth="60.0" text="No" />
+								<TableColumn fx:id="tcType" prefWidth="121.0" text="Type" />
+								<TableColumn fx:id="tcEmail" prefWidth="657.0" text="Email" />
+							</columns>
+						</TableView>
+					</center>
+				</BorderPane>
+				<HBox spacing="5.0" GridPane.columnIndex="1" GridPane.columnSpan="9" GridPane.rowIndex="3">
+					<children>
+						<RadioButton fx:id="rbTo" mnemonicParsing="false" onAction="#rbToOnAction" selected="true" text="To">
+							<toggleGroup>
+								<ToggleGroup fx:id="type" />
+							</toggleGroup>
+						</RadioButton>
+						<RadioButton fx:id="rboCc" mnemonicParsing="false" onAction="#rboCcOnAction" text="Cc" toggleGroup="$type" />
+						<RadioButton fx:id="rboBcc" mnemonicParsing="false" onAction="#rboBccOnAction" text="Bcc" toggleGroup="$type" />
+					</children>
+					<padding>
+						<Insets bottom="5.0" top="5.0" />
+					</padding>
+				</HBox>
+			</children>
+			<BorderPane.margin>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</BorderPane.margin>
+		</GridPane>
+	</top>
+	<center>
+		<BorderPane fx:id="borContents" BorderPane.alignment="CENTER">
+			<top>
+				<!-- <fx:include fx:controller="com.samsung.sds.sos.client.component.editor.Editor"></fx:include> -->
+			</top>
+			<bottom>
+				<VBox BorderPane.alignment="CENTER">
+					<children>
+						<HBox>
+							<children>
+								<HBox alignment="CENTER_LEFT" spacing="5.0">
+									<children>
+										<CheckBox fx:id="chkAttachments" mnemonicParsing="false" selected="true" text="Attachments" />
+										<Button fx:id="btnSearch" disable="true" minWidth="80.0" mnemonicParsing="false" onAction="#btnSearchOnAction" text="Search" />
+										<Button fx:id="btnDel" disable="true" minWidth="80.0" mnemonicParsing="false" onAction="#btnDeOnAction" text="Del" />
+									</children>
+									<padding>
+										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+									</padding>
+								</HBox>
+								<HBox alignment="CENTER_LEFT">
+									<children>
+										<Label text="Attached files can not exceed 10MB and be andded more than 100 files." />
+									</children>
+								</HBox>
+							</children>
+							<VBox.margin>
+								<Insets />
+							</VBox.margin>
+						</HBox>
+                  <ListView fx:id="tbAttachment" prefHeight="126.0" prefWidth="897.0" />
+						<HBox>
+							<children>
+								<HBox alignment="CENTER_LEFT" disable="true" spacing="5.0">
+									<children>
+										<CheckBox mnemonicParsing="false" text="Schedule Sending" />
+										<DatePicker />
+										<ChoiceBox prefHeight="23.0" prefWidth="73.0" />
+										<Label text="min" />
+										<ChoiceBox prefHeight="23.0" prefWidth="86.0" />
+									</children>
+									<padding>
+										<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+									</padding>
+								</HBox>
+								<HBox alignment="CENTER_LEFT" />
+							</children>
+						</HBox>
+					</children>
+					<BorderPane.margin>
+						<Insets />
+					</BorderPane.margin>
+					<padding>
+						<Insets left="5.0" right="5.0" />
+					</padding>
+				</VBox>
+			</bottom>
+			<BorderPane.margin>
+				<Insets left="5.0" right="5.0" />
+			</BorderPane.margin>
+			<center>
+				<WebView fx:id="wbAprvCont" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" BorderPane.alignment="CENTER" />
+			</center>
+		</BorderPane>
+	</center>
+	<bottom>
+		<HBox alignment="CENTER" spacing="5.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btnSend" minWidth="80.0" mnemonicParsing="false" onAction="#btnSendOnAction" text="Send" />
+				<Button fx:id="btnClose" minWidth="80.0" mnemonicParsing="false" onAction="#btnCloseOnAction" text="Close" />
+			</children>
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+		</HBox>
+	</bottom>
+</fx:root>

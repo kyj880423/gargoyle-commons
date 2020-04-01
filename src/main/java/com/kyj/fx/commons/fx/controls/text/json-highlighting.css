@@ -1,0 +1,19 @@
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.bracket {
+    -fx-fill: darkgreen;
+    -fx-font-weight: bold;
+}
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+.string {
+    -fx-fill: #179456;
+}
+
+.comment {
+	-fx-fill: cadetblue;
+}

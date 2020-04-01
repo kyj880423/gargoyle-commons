@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<fx:root type="BorderPane" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+	<center>
+		<GridPane prefHeight="209.0" prefWidth="463.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" maxWidth="5.0" minWidth="5.0" prefWidth="5.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+				<ColumnConstraints hgrow="NEVER" maxWidth="5.0" minWidth="5.0" prefWidth="5.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="46.0" valignment="CENTER" vgrow="NEVER" />
+				<RowConstraints maxHeight="1.7976931348623157E308" minHeight="77.0" prefHeight="77.0" vgrow="ALWAYS" />
+				<RowConstraints maxHeight="60.0" minHeight="0.0" prefHeight="60.0" vgrow="NEVER" />
+			</rowConstraints>
+			<children>
+				<Label fx:id="lblHeader" text="Header" GridPane.columnIndex="1" />
+				<ImageView fx:id="ivErr" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+					<!-- <image> -->
+					<!-- <Image url="resources/META-INF/images/nodeicons/dialog-error.png"
+						/> -->
+					<!-- </image> -->
+				</ImageView>
+            <BorderPane fx:id="borContent" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+            <HBox fx:id="hboxButtons" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0" style="-fx-background-color: transparent;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+			</children>
+		</GridPane>
+	</center>
+</fx:root>

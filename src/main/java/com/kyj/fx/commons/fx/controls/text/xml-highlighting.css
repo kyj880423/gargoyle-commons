@@ -1,0 +1,28 @@
+.tagmark {
+    -fx-fill: gray;
+}
+.anytag {
+    /*---fx-fill: crimson;*/
+    -fx-fill: #03A8D8
+}
+
+
+/* 
+.code-area:focused {
+    -fx-highlight-fill: crimson;
+}
+*/
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.attribute {
+    -fx-fill: darkviolet;
+}
+.avalue {
+    -fx-fill: black;
+}
+
+.comment {
+	-fx-fill: teal;
+}

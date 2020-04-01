@@ -1,0 +1,12 @@
+.root {
+	-fx-font-size : 8.25pt;	
+}
+.behavior-textarea{
+	-fx-font-size : 8.25pt;	
+}
+	
+.behavior-textarea .scroll-pane
+{	
+        -fx-hbar-policy : never;
+        -fx-vbar-policy : never;
+}

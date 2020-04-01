@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.kyj.fx.commons.fx.controls.text.XMLEditor?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root prefHeight="602.0" prefWidth="774.0" type="BorderPane"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+	<center>
+		<SplitPane dividerPositions="0.7516666666666667"
+			orientation="VERTICAL" BorderPane.alignment="CENTER">
+			<items>
+
+				<SplitPane>
+					<items>
+
+						<VBox>
+							<children>
+								<Label text="XML"></Label>
+								<XMLEditor fx:id="txtXml" VBox.vgrow="ALWAYS" />
+							</children>
+						</VBox>
+
+						<VBox>
+							<children>
+								<Label text="XPath"></Label>
+								<TextArea fx:id="txtXpath" VBox.vgrow="ALWAYS" />
+							</children>
+						</VBox>
+
+					</items>
+				</SplitPane>
+
+
+				<TabPane>
+					<tabs>
+						<Tab text="Console" closable="false">
+							<content>
+								<TextArea fx:id="txtConsole" prefHeight="200.0"
+									prefWidth="200.0" />
+							</content>
+						</Tab>
+					</tabs>
+				</TabPane>
+			</items>
+		</SplitPane>
+	</center>
+</fx:root>

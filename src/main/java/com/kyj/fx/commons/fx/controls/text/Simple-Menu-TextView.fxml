@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<fx:root prefHeight="733.0" prefWidth="932.0" type="BorderPane"
+	xmlns="http://javafx.com/javafx/8.0.141"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<bottom>
+		<HBox fx:id="hboxButtons" alignment="CENTER"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btnClose" mnemonicParsing="false"
+					prefHeight="0.0" prefWidth="123.0" text="Close" />
+			</children>
+			<padding>
+				<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+			</padding>
+		</HBox>
+	</bottom>
+	<center>
+		<!-- <TextArea fx:id="txtVoEditor" prefHeight="600.0" prefWidth="800.0" 
+			BorderPane.alignment="CENTER" /> -->
+	</center>
+	<top>
+		<MenuBar fx:id="mb" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<!-- <MenuItem fx:id="miNew" mnemonicParsing="false" onAction="#miNewOnAction" 
+							text="New" /> -->
+						<MenuItem fx:id="miOpen" mnemonicParsing="false"
+							onAction="#miOpenOnAction" text="Open" />
+						<Menu mnemonicParsing="false" text="Open With">
+							<items>
+							<MenuItem mnemonicParsing="false"
+									onAction="#openHexStringOnAction" text="Open Hex String" />
+								<MenuItem mnemonicParsing="false"
+									onAction="#openDexStringOnAction" text="Open Dex String" />
+							</items>
+						</Menu>
+						<MenuItem fx:id="miSave" mnemonicParsing="false"
+							onAction="#miSaveOnAction" text="Save" />
+						<MenuItem fx:id="miSaveAs" mnemonicParsing="false"
+							onAction="#miSaveAsOnAction" text="Save As" />
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="View">
+					<items>
+						<Menu mnemonicParsing="false" text="Open Width">
+							<items>
+								<Menu fx:id="menuNamo" mnemonicParsing="false"
+									text="Mime &gt; ">
+									<items>
+										<MenuItem fx:id="miOpenNamoMsWord"
+											mnemonicParsing="false" onAction="#miOpenNamoMsWordOnAction"
+											text="MsWord" />
+										<MenuItem fx:id="miOpenNamoWebView"
+											mnemonicParsing="false" onAction="#miOpenNamoWebViewOnAction"
+											text="WebView" />
+										<MenuItem fx:id="miToHtmlCode"
+											mnemonicParsing="false" onAction="#miToHtmlCodeOnAction"
+											text="To Html" />
+									</items>
+								</Menu>
+								<Menu fx:id="menuHtml" mnemonicParsing="false"
+									text="Html &gt; ">
+									<items>
+										<MenuItem fx:id="miOpenHtmlWord"
+											mnemonicParsing="false" onAction="#miOpenHtmlWordOnAction"
+											text="MsWord" />
+										<MenuItem fx:id="miOpenHtmlWevView"
+											mnemonicParsing="false" onAction="#miOpenHtmlWevViewOnAction"
+											text="WebView" />
+									</items>
+								</Menu>
+								<MenuItem mnemonicParsing="false"
+									onAction="#miShowAppCodeOnAction" text="Show Application Code" />
+							</items>
+						</Menu>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Edit">
+					<items>
+						<Menu mnemonicParsing="false" text="Base64">
+							<items>
+								<MenuItem mnemonicParsing="false"
+									onAction="#miBase64EncodeOnAction" text="Encode" />
+								<MenuItem mnemonicParsing="false"
+									onAction="#miBase64DecodeOnAction" text="Decode" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="JSON">
+							<items>
+								<MenuItem mnemonicParsing="false"
+									onAction="#prettyFormatOnAction" text="Pretty Format" />
+									<MenuItem mnemonicParsing="false"
+									onAction="#removeSpaceJsonFormatOnAction" text="Remove Space Format" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Hex">
+							<items>
+								<MenuItem mnemonicParsing="false"
+									onAction="#toHexOnAction" text="String -&gt; Hex" />
+								<MenuItem mnemonicParsing="false"
+									onAction="#toStringOnAction" text="Hex -&gt; String" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="UniCode">
+							<items>
+								<MenuItem fx:id="miEncode" mnemonicParsing="false"
+									onAction="#miEncodeOnAction" text="encode" />
+								<MenuItem fx:id="miDecode" mnemonicParsing="false"
+									onAction="#miDecodeOnAction" text="decode" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="XML">
+							<items>
+								<MenuItem mnemonicParsing="false"
+									onAction="#prettyXmlFormatOnAction" text="Pretty Format" />
+							</items>
+						</Menu>
+
+						<Menu mnemonicParsing="false" text="URL En/Decoder">
+							<items>
+								<MenuItem fx:id="miEncode" mnemonicParsing="false"
+									onAction="#miURLEncodeOnAction" text="encode" />
+								<MenuItem fx:id="miDecode" mnemonicParsing="false"
+									onAction="#miURLDecodeOnAction" text="decode" />
+							</items>
+						</Menu>
+						<SeparatorMenuItem />
+
+						<MenuItem fx:id="miAppend" mnemonicParsing="false"
+							onAction="#miTextAppendingOnAction" text="append" />
+						<MenuItem fx:id="miReduce" mnemonicParsing="false"
+							onAction="#miTextReduceOnAction" text="reducce" />
+
+						<SeparatorMenuItem />
+						<MenuItem fx:id="miRemoveSpacies" mnemonicParsing="false"
+							onAction="#miRemoveSpaciesOnAction" text="removeSpacies">
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Encoding">
+					<items>
+						<RadioMenuItem mnemonicParsing="false"
+							onAction="#rmiUTF8OnAction" text="UTF-8" selected="true">
+							<toggleGroup>
+								<ToggleGroup fx:id="groupEncoding" />
+							</toggleGroup>
+						</RadioMenuItem>
+						<RadioMenuItem mnemonicParsing="false"
+							onAction="#rmiUTF16LEOnAction" text="UTF-16LE"
+							toggleGroup="$groupEncoding" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+</fx:root>

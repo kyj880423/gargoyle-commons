@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<fx:root prefHeight="367.0" prefWidth="463.0" type="BorderPane"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60">
+	<center>
+		<GridPane BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="NEVER" maxWidth="5.0"
+					minWidth="5.0" prefWidth="5.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+				<ColumnConstraints hgrow="NEVER" maxWidth="5.0"
+					minWidth="5.0" prefWidth="5.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="65.0" minHeight="10.0"
+					prefHeight="49.0" vgrow="NEVER" />
+				<RowConstraints maxHeight="1.7976931348623157E308"
+					vgrow="ALWAYS" />
+				<RowConstraints maxHeight="115.0" minHeight="0.0"
+					prefHeight="36.0" vgrow="NEVER" />
+			</rowConstraints>
+			<children>
+				<Label fx:id="lblHeader" text="Header" GridPane.columnIndex="1" />
+				<ImageView fx:id="ivErr" pickOnBounds="true"
+					preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
+					<!-- <image> -->
+					<!-- <Image url="resources/META-INF/images/nodeicons/dialog-error.png"
+						/> -->
+					<!-- </image> -->
+				</ImageView>
+				<TextArea fx:id="txtConent" GridPane.columnIndex="1"
+					GridPane.columnSpan="2" GridPane.rowIndex="1" />
+				<Button fx:id="btnOk" mnemonicParsing="false" prefWidth="80.0"
+					text="OK" GridPane.columnIndex="2" GridPane.halignment="RIGHT"
+					GridPane.rowIndex="2" onAction="#btnOkOnAction" />
+			</children>
+		</GridPane>
+	</center>
+</fx:root>

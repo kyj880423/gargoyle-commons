@@ -1,0 +1,26 @@
+.dock-title-container{
+	-fx-spacing:  0.0xp;
+	-fx-padding:  2.0px 5.0px 0.5px 5.0px;
+}
+.dock-title-item {
+	-fx-border-width: 1.0px;
+	-fx-border-color: black ;
+	-fx-tick-label-fill: black;
+	-fx-pref-width: 100.0px;
+	-fx-border-radius: 5.0 5.0 0.0 0.0;
+}
+
+.dock-title-item :hover {
+	-fx-fill: red ;
+	-fx-font-weight: bold;
+	-fx-cursor:  hand ;
+}
+
+.dock-title-item-text{
+	-fx-padding: 5.0px 0.0px 5.0px 0.0px;
+}
+
+.dock-content-container{
+	-fx-border-width: 1.0px;
+	-fx-border-color:  black ;
+}

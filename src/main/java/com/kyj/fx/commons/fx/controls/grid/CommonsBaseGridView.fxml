@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import com.kyj.tmp.application.template.grid.commons.*?>
+
+
+<fx:root type="CommonsBaseGridView" xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/8" fx:controller="CommonsBaseGridViewController">
+
+</fx:root>

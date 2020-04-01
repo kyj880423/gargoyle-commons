@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+
+<BorderPane prefHeight="791.0" prefWidth="798.0" stylesheets="@DockTabContainerView.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141">
+   <top>
+      <HBox styleClass="dock-title-container" BorderPane.alignment="CENTER">
+         <children>
+            <StackPane styleClass="dock-title-item">
+               <children>
+                  <Label styleClass="dock-title-item-text" text="Label" />
+               </children>
+            </StackPane>
+            <StackPane styleClass="dock-title-item">
+               <children>
+                  <Label styleClass="dock-title-item-text" text="Label" />
+               </children>
+            </StackPane>
+            <StackPane styleClass="dock-title-item">
+               <children>
+                  <Label styleClass="dock-title-item-text" text="Label" />
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" styleClass="dock-content-container" />
+   </center>
+</BorderPane>

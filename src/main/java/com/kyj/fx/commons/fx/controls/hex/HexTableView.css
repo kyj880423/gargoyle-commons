@@ -1,0 +1,16 @@
+.hex-table .table-row-cell {
+	-fx-table-cell-border-color: transparent;
+}
+
+.hex-table .tc-offset {	
+/* 	-fx-font-weight: bold; */
+     -fx-text-fill: blue; 
+}
+
+.hex-table .tc-hex {
+	-fx-text-fill: green;
+}
+
+.hex-table .tc-dec {
+
+}

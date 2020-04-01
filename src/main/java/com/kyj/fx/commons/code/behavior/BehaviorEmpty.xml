@@ -1,0 +1,19 @@
+<Behavior SchemaVersion="2">
+  <DesignerLayout>
+    <Object type="System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" name="Behavior" children="Controls">
+      <Property name="AutoScroll">True</Property>
+      <Property name="Size">336, 344</Property>
+      <Property name="DataBindings">
+        <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
+      </Property>
+      <Property name="Name">Behavior</Property>
+      <Property name="BackColor">Control</Property>
+    </Object>
+  </DesignerLayout>
+  <DesignEvents />
+  <Execution>
+    <Script />
+    <GUI />
+  </Execution>
+  <Properties Version="1" Author="" Company="" Email="" Description="" Usage="" />
+</Behavior>
