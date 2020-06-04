@@ -139,7 +139,7 @@ public class BehaviorReadWriter implements Closeable {
 				Node namedItem = item.getAttributes().getNamedItem("FileName");
 
 				if (ValueUtil.equals(bfm.getName(), namedItem.getNodeValue())) {
-					documentElement.removeChild(item);
+					//documentElement.removeChild(item);
 					exists = true;
 					break;
 				}
