@@ -40,6 +40,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.kyj.fx.commons.models.ExcelColDVO;
 import com.kyj.fx.commons.models.ExcelDataDVO;
+import com.kyj.fx.commons.models.ExcelDataFomulaDVO;
 import com.kyj.fx.commons.models.ExcelSVO;
 
 import javafx.scene.control.TableView;
@@ -92,7 +93,7 @@ public class ExcelUtil {
 		return new FileOutputStream(fileName.concat("." + fileFormat));
 	}
 
-	public static Cell createCell(Sheet sheet, Object str, int row, int column) throws Exception {
+	public static Cell createCell(Sheet sheet, Object data, int row, int column) throws Exception {
 		Row row2 = sheet.getRow(row);
 
 		if (row2 == null) {
@@ -108,23 +109,30 @@ public class ExcelUtil {
 			createCell = row2.createCell(column);
 		}
 
-		if (str instanceof String) {
-			if(((String) str).length() >= 32767)
-				createCell.setCellValue(new XSSFRichTextString(str.toString()));
+		if(data instanceof ExcelDataFomulaDVO)
+		{
+			ExcelDataFomulaDVO d = (ExcelDataFomulaDVO) data;
+			createCell.setCellFormula(d.getData().toString());
+		}
+		else if (data instanceof String) {
+			if(((String) data).length() >= 32767)
+				createCell.setCellValue(new XSSFRichTextString(data.toString()));
 			else
-				createCell.setCellValue((String) str);
-		} else if (str instanceof Integer) {
-			createCell.setCellValue((Integer) str);
-		} else if (str instanceof Double) {
-			createCell.setCellValue((Double) str);
-		} else if (str instanceof Float) {
-			createCell.setCellValue((Float) str);
-		} else if (str == null) {
+				createCell.setCellValue((String) data);
+		} else if (data instanceof Integer) {
+			createCell.setCellValue((Integer) data);
+		} else if (data instanceof Double) {
+			createCell.setCellValue((Double) data);
+		} else if (data instanceof Float) {
+			createCell.setCellValue((Float) data);
+		} else if (data == null) {
 			createCell.setCellValue("");
 		} else {
-			createCell.setCellValue(str.toString());
+			createCell.setCellValue(data.toString());
 //			throw new Exception("뭘 입력하신겁니까?");
 		}
+		
+		
 
 		return createCell;
 	}
